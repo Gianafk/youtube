@@ -1,72 +1,69 @@
 body{
-    background-color: rgb(37, 37, 37);
-}
-
-.container{
-    display: grid;
-    grid-template-areas:
-    "barra titulo pesquisa canal"
-    "video video video lista"
-    "desc desc desc lista";
-    grid-template-columns: 20px 100px 1fr 40px;
-    gap: 10px;
-    padding: 5px;
-}
-.titulo{
-grid-area: titulo;
-padding: 10px;
-}
-.title{
-    width: 55px;
-    height: 15px;
-    background-color: red;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: start;
-}
-.pesquisa{
-    grid-area: pesquisa;
-    width: 500px;
-    height: 30px;
-    line-height: 30px;
+    background-color: rgb(32, 32, 32);
     color: white;
-    margin-top: 10px;
-    text-align: center;
-    background-color: rgb(63, 63, 63);
-    border-radius: 10px;
-}
-.canal{
-    grid-area: canal;
-    border-radius: 25px;
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-}
-.video {
-    grid-area: video;
-    width: 820px;
-    height: 450px;
-    margin-left: 30px;
-    background-color: #0a87da; 
-    color: white; 
-    text-align: center;
-    line-height: 450px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: "Roboto", sans-serif;
+    height: 200vh;
+    scrollbar-color: #ababab;
 }
 
-.lista{
+header {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+}
+.margin{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     
 }
 
+.barra1{
+    width: 40px;
+    height: 35px;
+}
+.logo{
+    width: 80px;
+    height: 25px;
+    background-color: brown;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+.pesquisa{
+line-height: 30px;
+flex-basis: 600px;
+flex-grow: 5;
+}
+.pbar{
+    width: 50%;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 50px;
+    text-align: end;
+    color:rgb(0, 0, 0);
+    margin-left: 25%;
+}
+#text{
+    margin-right: 10px;
+}
+.canal{
+width: 50px;
+height: 50px;
+align-self: flex-start;
+background-color:blueviolet;
+text-align: center;
+line-height: 50px;
+border-radius: 50%;
+}
 
 .barra {
-    grid-area: barra;
     width: 35px;
     height: 5px;
     background-color: rgb(0, 0, 0);
     position: absolute;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .barra::before,
@@ -76,8 +73,6 @@ padding: 10px;
     height: 5px;
     background-color: rgb(0, 0, 0);
     position: absolute;
-    left: 0;
-    border-radius: 5px;
 }
 
 .barra::before {
@@ -86,4 +81,53 @@ padding: 10px;
 
 .barra::after {
     top: 10px;
+}
+
+.principal{
+    display: flex;
+    height: 550px;
+    gap: 20px;
+}
+
+.video{
+    flex-grow: 2;
+    height: 500px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin-left: 60px;
+}
+.recomendados{
+    flex-grow: 1;
+    height: 800px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 5px;
+}
+.descricao{
+    display: flex;
+    height: 250px;
+    width: 950px;
+    background-color: rgb(99, 99, 99);
+    border-radius: 10px;
+}
+@media (max-width: 900px) {
+    .principal {
+        flex-direction: column;
+    }
+    .video{
+        order: 1;
+        margin-right: 50px;
+    }
+    .descricao{
+        order: 2;
+        height: 800;
+    }
+    .recomendados{
+        order: 3;
+        width: 300px;
+        align-self: flex-end;
+        margin-top: 600px;
+        height: 800px;
+        position: absolute;
+    }
+
 }
